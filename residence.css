@@ -1,0 +1,301 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    text-align: center;
+    background-color: rgb(233, 239, 245);
+    margin: 0;
+}
+
+#header-sect {
+    background-color: rgb(233, 239, 245);
+    margin: auto;
+    color: rgb(7, 133, 133);
+}
+
+.offer-sect {
+    margin: 70px 0 40px;
+    background-color: rgb(233, 239, 245);
+}
+
+.line {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.line span {
+    width: 100px;
+    height: 2px;
+    background: #00c4cc;
+}
+
+.line h3 {
+    color: rgb(13, 61, 61);
+    margin: 0;
+}
+
+.about {
+    font-weight: bold;
+    font-size: larger;
+    background-color: rgb(233, 239, 245);
+    color: rgb(7, 133, 133);
+    margin: 70px 0 40px;
+}
+
+.room-section {
+    margin: 70px 0 40px;
+    background-color: rgb(233, 239, 245);
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.view-card {
+    width: 250px;
+    background-color: white;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0px 8px 20px rgb(0, 0, 0, 0.15);
+    transition: 0.3s;
+}
+
+.view-card:hover {
+    transform: translateY(-8px);
+}
+
+.view-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+button {
+    width: 100px;
+    height: 30px;
+    margin-bottom: 20px;
+    border: 0;
+    border-radius: 18px;
+    background-color: rgb(7, 133, 133);
+    color: aliceblue;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: translateY(-5px);
+}
+
+.rules-sect {
+    margin: 70px 0 40px;
+    background-color: rgb(233, 239, 245);
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.rules-card {
+    width: 250px;
+    background-color: white;
+    border-top: 4px solid rgb(29, 221, 189);
+    border-radius: 18px;
+    box-shadow: 0px 8px 20px rgb(0, 0, 0, 0.15);
+    transition: 0.3s;
+}
+
+.rules-card:hover {
+    transform: translateY(-5px);
+}
+
+.rules-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.rules-card li {
+    text-align: center;
+    font-weight: bold;
+}
+
+.rules-card p {
+    font-weight: bold;
+    color: rgb(7, 133, 133);
+}
+
+.contacts-sect {
+    margin: 70px 0 40px;
+    background-color: rgb(233, 239, 245);
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.contacts-card {
+    width: 250px;
+    background-color: white;
+    border: 0;
+    border-radius: 18px;
+    box-shadow: 0px 8px 20px rgb(0, 0, 0, 0.15);
+    transition: 0.3s;
+}
+
+.contacts-card:hover {
+    transform: translateY(-5px);
+}
+
+.contacts-card a {
+    color: black;
+    text-decoration: none;
+}
+
+.contacts-card p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.contacts-card img {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.room-details{
+    margin: 70px auto 40px;
+    padding: 30px;
+    max-width: 900px;
+    background-color: rgb(233, 239, 245);
+}
+
+.main-room-image {
+    width:100%;
+    max-width: 700px;
+    height: 400px;
+    
+    border-radius: 18px;
+    margin:30px 0;
+}
+.room-info {
+    background-color: white;
+    padding: 25px;
+    border-radius: 18px;
+    text-align: left;
+    box-shadow: 0px 8px 20px rgb(0, 0, 0, 0.15);
+}
+
+.room-info h3 {
+     color: rgb(7, 133, 133);
+}
+
+.room-gallery {
+    display: flex;
+    justify-content: center;
+    gap:20px;
+    flex-wrap: wrap;
+    margin:20px 0 50px
+}
+
+.room-gallery img {
+    width:200px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.room-details {
+    display: none;
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 600px) {
+
+    body {
+        margin: 0;
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    #header-sect {
+        padding: 25px 15px;
+    }
+
+    #header-sect h1 {
+        font-size: 28px;
+    }
+
+    #header-sect h2 {
+        font-size: 18px;
+    }
+
+    .offer-sect,
+    .about,
+    .room-section,
+    .rules-sect,
+    .contacts-sect {
+        margin: 40px 0 30px;
+        padding: 15px;
+    }
+
+    .about {
+        padding: 20px;
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    .line {
+        gap: 10px;
+    }
+
+    .line span {
+        width: 60px;
+    }
+
+    .line h3 {
+        font-size: 18px;
+    }
+
+    .room-section,
+    .rules-sect,
+    .contacts-sect {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .view-card,
+    .rules-card,
+    .contacts-card {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .view-card img {
+        height: 200px;
+    }
+
+    .contacts-card p {
+        padding: 5px;
+    }
+
+    button {
+        width: 120px;
+        height: 35px;
+    }
+}
