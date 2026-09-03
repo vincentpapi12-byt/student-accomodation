@@ -10,28 +10,17 @@ function hideRooms() {
     RoomBEl.style.display="none";
     RoomCEl.style.display="none";
 }
-function Room_A(){
-    hideRooms()
-    RoomAEl.style.display="block";
-    Room_messageEL.style.display="none";
-    RoomAEl.scrollIntoView();
-  
-}
-function Room_B() {
-    hideRooms()
-    RoomBEl.style.display="block";
-    Room_messageEL.style.display="none";
-    RoomBEl.scrollIntoView();
-}
-function Room_C(){
-    hideRooms()
-    RoomCEl.style.display="block";
-    Room_messageEL.style.display="none";
-    RoomCEl.scrollIntoView();
-}
+
 
 function backToRooms() {
     hideRooms();
     Room_messageEL.style.display="block"
     roomsEl.scrollIntoView()
+}
+
+function showRoom(room) {
+  hideRooms();
+  room.style.display = "block";
+  Room_messageEL.style.display = "none";
+  room.scrollIntoView();
 }
