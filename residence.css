@@ -154,11 +154,15 @@ button:hover {
 
 .contacts-card {
     width: 250px;
+    text-decoration: none;
     background-color: white;
     border: 0;
     border-radius: 18px;
     box-shadow: 0px 8px 20px rgb(0, 0, 0, 0.15);
     transition: 0.3s;
+    display: block;
+    color: black;
+    
 }
 
 .contacts-card:hover {
@@ -390,4 +394,7 @@ footer {
 #rules,
 #contacts {
     scroll-margin-top: 150px;
+}
+.contacts-sect > a {
+    display: block;
 }
