@@ -385,3 +385,9 @@ footer {
     background: rgb(13, 61, 61);
     color: aliceblue;
 }
+#header-sect,
+#rooms,
+#rules,
+#contacts {
+    scroll-margin-top: 70px;
+}
