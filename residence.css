@@ -97,6 +97,7 @@ button {
     color: aliceblue;
     font-weight: bold;
     transition: 0.3s;
+    cursor: pointer;
 }
 
 button:hover {
@@ -200,6 +201,7 @@ html {
     
     border-radius: 18px;
     margin:30px 0;
+    object-fit: cover;
 }
 .room-info {
     background-color: white;
@@ -207,6 +209,7 @@ html {
     border-radius: 18px;
     text-align: left;
     box-shadow: 0px 8px 20px rgb(0, 0, 0, 0.15);
+    line-height: 1.6;
 }
 
 .room-info h3 {
@@ -319,6 +322,17 @@ html {
      nav a {
       padding: 8px 6px;
     }
+    .room-details {
+    padding: 15px;
+    }
+    .room-gallery img {
+    width: 100%;
+    max-width: 300px;
+    height: 200px;
+}
+.main-room-image {
+    height: 250px;
+   }
 }
 nav {
     background: white;
@@ -340,4 +354,21 @@ nav a {
 }
 nav a:hover {
     color: rgb(29, 221, 189);
+}
+.room-price {
+    font-size: 24px;
+    color: rgb(7, 133, 133);
+    margin-bottom: 15px;
+}
+
+.availability {
+    font-weight: bold;
+    color: rgb(7, 133, 133);
+} 
+
+.room-details button {
+    width:140%;
+}
+.room-details button:hover {
+    background-color: rgb(13, 61, 61);
 }
