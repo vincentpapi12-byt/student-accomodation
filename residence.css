@@ -214,6 +214,7 @@ html {
 
 .room-info h3 {
      color: rgb(7, 133, 133);
+     margin-top: 20px;
 }
 
 .room-gallery {
@@ -229,6 +230,10 @@ html {
     height: 150px;
     object-fit: cover;
     border-radius: 15px;
+    transition: 0.3s;
+}
+.room-gallery img:hover {
+    transform: scale(1.05);
 }
 
 .room-details {
@@ -371,4 +376,11 @@ nav a:hover {
 }
 .room-details button:hover {
     background-color: rgb(13, 61, 61);
+}
+
+footer {
+    margin-top: 70px;
+    padding: 20px;
+    background: rgb(13, 61, 61);
+    color: aliceblue;
 }
