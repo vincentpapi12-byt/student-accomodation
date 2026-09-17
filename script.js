@@ -24,3 +24,12 @@ function showRoom(room) {
   Room_messageEL.style.display = "none";
   room.scrollIntoView();
 }
+
+
+function bookRoom(roomName) {
+    let message = `Hello, I am interested in booking ${roomName} at Radzilani Residence.`;
+
+    let whatsappURL = `https://wa.me/27712014121?text=${encodeURIComponent(message)}`;
+
+    window.open(whatsappURL, "_blank");
+}
