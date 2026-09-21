@@ -2,6 +2,11 @@
     box-sizing: border-box;
 }
 
+html,
+body {
+    overflow-x: clip;
+}
+
 body {
     text-align: center;
     background-color: rgb(233, 239, 245);
@@ -525,16 +530,19 @@ footer {
         font-size: 14px;
     }
 
-    nav {
-        flex-wrap: nowrap;
-        gap: 15px;
-        overflow-x: auto;
-    }
+   nav {
+    flex-wrap: wrap;
+    gap: 10px;
+    overflow-x: visible;
+    position: sticky;
+    top: 0;
+}
 
     nav a {
-        padding: 8px 6px;
-        white-space: nowrap;
-    }
+    padding: 6px 5px;
+    font-size: 0.95rem;
+    white-space: nowrap;
+}
 
     .room-details {
         padding: 15px;
