@@ -537,6 +537,7 @@ footer {
     overflow-x: visible;
     position: sticky;
     top: 0;
+    padding: 12px 15px;
 }
 
     nav a {
@@ -545,10 +546,15 @@ footer {
     white-space: nowrap;
 }
 .nav-links {
+    display: flex;
     justify-content: flex-start;
+    align-items: center;
     gap: 15px;
+
     overflow-x: auto;
     white-space: nowrap;
+
+    padding: 5px 0;
 }
 
 .nav-links a {
