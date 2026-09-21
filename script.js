@@ -4,6 +4,14 @@ let RoomBEl=document.getElementById("room-b");
 let RoomCEl=document.getElementById("room-c");
 let Room_messageEL=document.getElementById("room-message")
 let roomsEl=document.getElementById("rooms")
+const typingHeading = document.querySelector(".typing-heading")
+
+const observer = new IntersectionObserver((entries) => {
+     if (entries[0].isIntersecting) {
+          typingHeading.classList.add("typing-active")
+    }
+})
+observer.observe(typingHeading)
 
 function hideRooms() {
     RoomAEl.style.display="none";
