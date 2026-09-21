@@ -370,18 +370,19 @@ html {
    ========================= */
 
 nav {
-  background: white;
+    background: white;
     padding: 15px 8%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgb(0, 0, 0, 0.1);
+}
+
+.nav-links {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 35px;
-
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-
-    box-shadow: 0 2px 8px rgb(0, 0, 0, 0.1);
 }
 
 nav a {
@@ -542,6 +543,16 @@ footer {
     padding: 6px 5px;
     font-size: 0.95rem;
     white-space: nowrap;
+}
+.nav-links {
+    justify-content: flex-start;
+    gap: 15px;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.nav-links a {
+    flex-shrink: 0;
 }
 
     .room-details {
