@@ -12,23 +12,55 @@ body {
     background-color: rgb(233, 239, 245);
     margin: auto;
     color: rgb(7, 133, 133);
+
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 8%;
+}
+
+#header-sect h1 {
+    font-size: 4rem;
+    margin-bottom: 15px;
+}
+
+#header-sect h2 {
+    font-size: 1.8rem;
+    font-weight: 500;
 }
 
 .offer-sect {
-    margin: 70px 0 40px;
-    padding:50px 20px;
+    min-height: 90vh;
+    margin: 0;
+    padding: 60px 8%;
+
     background-color: rgb(233, 239, 245);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.offer-sect h3 {
+    font-size: 2.5rem;
+}
+
+.offer-sect p {
+    font-size: 1.2rem;
 }
 
 .line {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
 }
 
 .line span {
-    width: 100px;
+    width: 60px;
     height: 2px;
     background: #00c4cc;
 }
@@ -39,22 +71,39 @@ body {
 }
 
 .about {
-    font-weight: bold;
-    font-size: larger;
+     min-height: 90vh;
+    margin: 0;
+    padding: 60px 8%;
+
     background-color: rgb(233, 239, 245);
     color: rgb(7, 133, 133);
-    margin: 70px 0 40px;
-    padding: 70px 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .room-section {
-    margin: 70px 0 40px;
+    min-height: 90vh;
+    margin: 0;
+    padding: 60px 8%;
+
     background-color: rgb(233, 239, 245);
+
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 30px;
     flex-wrap: wrap;
-    padding: 60px 20px;
+}
+
+.room-section .line {
+    width: 100%;
+}
+
+.room-section .line h3 {
+    font-size: 2.5rem;
 }
 
 .view-card {
@@ -136,17 +185,23 @@ button:active {
    ========================= */
 
 .rules-sect {
-    margin: 70px 0 40px;
+    min-height: 90vh;
+    margin: 0;
+    padding: 60px 8%;
+
     background-color: rgb(233, 239, 245);
+
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 30px;
     flex-wrap: wrap;
-    padding: 60px 20px;
 }
 
 .rules-card {
     width: 250px;
+    min-height: 300px;
+    padding: 25px 15px;
     background-color: white;
     border-top: 4px solid rgb(29, 221, 189);
     border-radius: 18px;
@@ -179,13 +234,15 @@ button:active {
    ========================= */
 
 .contacts-sect {
-    margin: 70px 0 40px;
+    margin: 50px 0 40px;
+    padding: 40px 8%;
+
     background-color: rgb(233, 239, 245);
+
     display: flex;
     justify-content: center;
     gap: 30px;
     flex-wrap: wrap;
-    padding: 60px 20px;
 }
 
 .contacts-card {
@@ -308,29 +365,56 @@ html {
    ========================= */
 
 nav {
-    background: white;
-    padding: 15px;
+  background: white;
+    padding: 15px 8%;
     display: flex;
     justify-content: center;
-    gap: 30px;
+    align-items: center;
+    gap: 35px;
+
     position: sticky;
     top: 0;
     z-index: 1000;
+
     box-shadow: 0 2px 8px rgb(0, 0, 0, 0.1);
 }
 
 nav a {
+       position: relative;
+
     text-decoration: none;
     color: rgb(7, 133, 133);
     font-weight: bold;
+
+    font-size: 1.1rem;
     padding: 8px 12px;
-    transition: 0.3s;
 }
 
-nav a:hover {
-    color: rgb(29, 221, 189);
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    width: 0;
+    height: 2px;
+
+    background-color: rgb(29, 221, 189);
+
+    transition: width 0.3s ease;
 }
 
+nav a:hover::after {
+    width: 100%;
+}
+
+nav a.active {
+    color: rgb(13, 61, 61);
+}
+
+nav a.active::after {
+    width: 100%;
+}
 
 /* =========================
    FOOTER
@@ -384,14 +468,13 @@ footer {
         font-size: 18px;
     }
 
-    .offer-sect,
-    .about,
-    .room-section,
-    .rules-sect,
-    .contacts-sect {
-        margin: 40px 0 30px;
-        padding: 15px;
-    }
+.offer-sect,
+.about,
+.room-section,
+.rules-sect {
+    margin: 0;
+    padding: 40px 15px;
+}
 
     .about {
         padding: 20px;
@@ -466,4 +549,91 @@ footer {
     .main-room-image {
         height: 250px;
     }
+
+    .offer-content {
+    flex-direction: column;
+    align-items: center;
+}
+
+.rules-cards {
+    flex-direction: column;
+    align-items: center;
+}
+}
+
+.offer-content {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.offer-content > div {
+    width: 250px;
+    padding: 30px 20px;
+    background-color: white;
+    border-radius: 18px;
+    box-shadow: 0 8px 20px rgb(0, 0, 0, 0.15);
+}
+
+.offer-content i {
+    font-size: 2rem;
+    color: rgb(7, 133, 133);
+}
+
+.offer-content h4 {
+    font-size: 1.3rem;
+    color: rgb(13, 61, 61);
+}
+
+.offer-content p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.rules-sect .line {
+    width: 100%;
+}
+
+.rules-sect .line h3 {
+    font-size: 2.5rem;
+}
+
+.rules-card h4 {
+    font-size: 1.4rem;
+    color: rgb(7, 133, 133);
+    margin-bottom: 20px;
+}
+
+.rules-card li i {
+    color: rgb(7, 133, 133);
+    margin-right: 10px;
+}
+
+.rules-card ul {
+    padding: 0 20px;
+    margin: 0;
+}
+
+.rules-card li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+    line-height: 1.5;
+}
+.rules-cards {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
+    width: 100%;
+}
+
+.contacts-sect .line {
+    width: 100%;
+}
+
+.contacts-sect .line h3 {
+    font-size: 2.5rem;
 }

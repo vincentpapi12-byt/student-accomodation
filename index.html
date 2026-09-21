@@ -12,26 +12,50 @@
 <body>
     <nav>
         <a href="#header-sect">Home</a>
+        <a href="#offer">Offer</a>
+        <a href="#about">About</a>
         <a href="#rooms">Room</a>
          <a href="#rules">Rules</a>
+
           <a href="#contacts">Contact</a>
+          
 
     </nav>
     <section id="header-sect">
-         <h1>Radzilani Residence</h1>
+         <h1 class="typing-heading">Radzilani Residence</h1>
          <h2>Welcome to a residence where students meet comfort.</h2>
     </section>
 
-     <section class="offer-sect">
-        <div class="line">
-            <span></span>
-               <h3>Offer</h3>
-            <span></span>
-        </div>
-    </section>
+    <section id="offer" class="offer-sect reveal-section">
+    <div id="lne" class="line">
+        <span></span>
+        <h3>What We Offer</h3>
+        <span></span>
+    </div>
 
-   <section class="about">
-    <h2 class="typing-heading">Comfortable Student Living</h2>
+    <div class="offer-content">
+        <div>
+            <i class="fa-solid fa-house"></i>
+            <h4>Comfortable Rooms</h4>
+            <p>Clean and comfortable rooms suitable for student living.</p>
+        </div>
+
+        <div>
+            <i class="fa-solid fa-wifi"></i>
+            <h4>Wi-Fi</h4>
+            <p>Stay connected while studying and relaxing.</p>
+        </div>
+
+        <div>
+            <i class="fa-solid fa-bolt"></i>
+            <h4>Electricity</h4>
+            <p>Electricity is included for your convenience.</p>
+        </div>
+    </div>
+</section>
+
+   <section id ="about" class="about reveal-section">
+    <h2>Comfortable Student Living</h2>
 
     <p>
         We offer comfortable rooms for student living off-campus.<br>
@@ -41,63 +65,71 @@
     </p>
 </section>
    
-     <section class="offer-sect">
-        <div class="line">
-            <span></span>
-               <h3>Rooms To View</h3>
-            <span></span>
-        </div>
-    </section>
+   <section id="rooms" class="room-section reveal-section">
 
-    <section id="rooms" class="room-section">
-        <div class="view-card">
-            <img src="Room A.jpg">
-            <p>Room A</p>
-            <button onclick="showRoom(RoomAEl)">View Room</button>
-        </div>
-        <div class="view-card">
-            <img src="Room B.jpg">
-            <p>Room B</p>
-            <button onclick="showRoom(RoomBEl)">View Room</button>
-        </div>
-        <div class="view-card">
-            <img src="Room C.jpg">
-            <p>Room C</p>
-                <button onclick="showRoom(RoomCEl)">View Room</button>
-        </div>
-    </section >
-        <p id="room-message"><strong>Select a room above to view its details.</strong></p>
-     <section class="offer-sect">
-       <div class="line">
+    <div class="line">
         <span></span>
-         <h3>Rules & Requirements</h3>
-         <span></span>
-       </div>
-     </section>
+        <h3>Rooms To View</h3>
+        <span></span>
+    </div>
+
+    <div class="view-card">
+        <img src="Room A.jpg">
+        <p>Room A</p>
+        <button onclick="showRoom(RoomAEl)">View Room</button>
+    </div>
+
+    <div class="view-card">
+        <img src="Room B.jpg">
+        <p>Room B</p>
+        <button onclick="showRoom(RoomBEl)">View Room</button>
+    </div>
+
+    <div class="view-card">
+        <img src="Room C.jpg">
+        <p>Room C</p>
+        <button onclick="showRoom(RoomCEl)">View Room</button>
+    </div>
+
+</section>
+
+        <p id="room-message"><strong>Select a room above to view its details.</strong></p>
+  
+       
     
-    <section id="rules" class="rules-sect">
+<section id="rules" class="rules-sect reveal-section">
+
+    <div class="line">
+        <span></span>
+        <h3>Rules & Requirements</h3>
+        <span></span>
+    </div>
+
+    <div class="rules-cards">
+
         <div class="rules-card">
-            <p>Rules to comply with</p>
-                <ul>
-                     <li>No making noise in week days</li>
-                     <li>Curfew ends at 22:30</li>
-                     <li>No sleepover of opposite gender</li>
-                     <li>Treat others kindly</li>
-                </ul>
-             
-            
+            <h4>House Rules</h4>
+            <ul>
+                <li><i class="fa-solid fa-volume-xmark"></i> No making noise on weekdays</li>
+                <li><i class="fa-solid fa-clock"></i> Curfew is at 22:30</li>
+                <li><i class="fa-solid fa-user-group"></i> No sleepovers with the opposite gender</li>
+                <li><i class="fa-solid fa-handshake"></i> Treat others kindly</li>
+            </ul>
         </div>
-         <div class="rules-card">
-            <p>Services</p>
-                 <ul>
-                     <li>Free water supply</li>
-                     <li>Free Electricity</li>
-                     <li>Wifi</li>
-                     <li>Cleaning</li>
-                </ul>
-            
+
+        <div class="rules-card">
+            <h4>Included Services</h4>
+            <ul>
+                <li><i class="fa-solid fa-droplet"></i> Free water supply</li>
+                <li><i class="fa-solid fa-bolt"></i> Free electricity</li>
+                <li><i class="fa-solid fa-wifi"></i> Wi-Fi</li>
+                <li><i class="fa-solid fa-broom"></i> Cleaning service</li>
+            </ul>
         </div>
-    </section>
+
+    </div>
+
+</section>
  
 
 
@@ -221,15 +253,13 @@
     </section>
 
 
-       <section class="offer-sect">
-        <div class="line">
+    
+    <section id="contacts" class="contacts-sect reveal-section">
+          <div class="line">
         <span></span>
         <h3>Contacts</h3>
         <span></span>
         </div>
-    </section>
-    
-    <section id="contacts" class="contacts-sect">
        <a href="https://wa.me/27712014121" class="contacts-card">
     <p>
         <img src="whatsapp.png">

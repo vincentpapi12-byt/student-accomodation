@@ -5,13 +5,11 @@ let RoomCEl=document.getElementById("room-c");
 let Room_messageEL=document.getElementById("room-message")
 let roomsEl=document.getElementById("rooms")
 const typingHeading = document.querySelector(".typing-heading")
+const navLinks = document.querySelectorAll("nav a");
 
-const observer = new IntersectionObserver((entries) => {
-     if (entries[0].isIntersecting) {
-          typingHeading.classList.add("typing-active")
-    }
-})
-observer.observe(typingHeading)
+const sections = document.querySelectorAll(
+ "#header-sect, #offer, #about, #rooms, #rules, #contacts"
+);
 
 function hideRooms() {
     RoomAEl.style.display="none";
@@ -41,3 +39,45 @@ function bookRoom(roomName) {
 
     window.open(whatsappURL, "_blank");
 }
+
+const revealSections = document.querySelectorAll(".reveal-section");
+
+const revealObserver = new IntersectionObserver((entries) => {
+
+    entries.forEach((entry) => {
+
+        if (entry.isIntersecting) {
+            entry.target.classList.add("reveal-active");
+        }
+
+    });
+
+});
+
+revealSections.forEach((section) => {
+    revealObserver.observe(section);
+});
+
+
+const navObserver = new IntersectionObserver((entries) => {
+
+    entries.forEach((entry) => {
+
+        if (entry.isIntersecting) {
+     
+            navLinks.forEach((link) => {
+    link.classList.remove("active");
+
+    if (link.getAttribute("href") === `#${entry.target.id}`) {
+        link.classList.add("active");
+    }
+});
+        }
+
+    });
+
+});
+
+sections.forEach((section) => {
+    navObserver.observe(section);
+});
