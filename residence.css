@@ -16,6 +16,7 @@ body {
 
 .offer-sect {
     margin: 70px 0 40px;
+    padding:50px 20px;
     background-color: rgb(233, 239, 245);
 }
 
@@ -43,6 +44,7 @@ body {
     background-color: rgb(233, 239, 245);
     color: rgb(7, 133, 133);
     margin: 70px 0 40px;
+    padding: 70px 20px;
 }
 
 .room-section {
@@ -52,7 +54,7 @@ body {
     justify-content: center;
     gap: 30px;
     flex-wrap: wrap;
-    padding: 20px;
+    padding: 60px 20px;
 }
 
 .view-card {
@@ -140,7 +142,7 @@ button:active {
     justify-content: center;
     gap: 30px;
     flex-wrap: wrap;
-    padding: 20px;
+    padding: 60px 20px;
 }
 
 .rules-card {
@@ -183,7 +185,7 @@ button:active {
     justify-content: center;
     gap: 30px;
     flex-wrap: wrap;
-    padding: 20px;
+    padding: 60px 20px;
 }
 
 .contacts-card {
