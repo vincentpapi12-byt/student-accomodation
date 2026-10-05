@@ -302,20 +302,15 @@ html {
 }
 
 
-.room-animate {
-    animation: roomReveal 0.7s ease forwards;
+.room-reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-@keyframes roomReveal {
-    from {
-        opacity: 0;
-        transform: translateY(50px) scale(0.97);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
+.room-reveal.room-visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .main-room-image {

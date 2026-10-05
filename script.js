@@ -24,26 +24,19 @@ function backToRooms() {
     roomsEl.scrollIntoView()
 }
 
+//------------Show Room------------
+
 function showRoom(room) {
     hideRooms();
 
-    // Restart the animation
-    room.classList.remove("room-animate");
-    
     room.style.display = "block";
     Room_messageEL.style.display = "none";
-
-    // Force the browser to restart the animation
-    void room.offsetWidth;
-
-    room.classList.add("room-animate");
 
     room.scrollIntoView({
         behavior: "smooth",
         block: "start"
     });
 }
-
 
 function bookRoom(roomName) {
     let message = `Hello, I am interested in booking ${roomName} at Radzilani Residence.`;
@@ -94,4 +87,28 @@ const navObserver = new IntersectionObserver((entries) => {
 
 sections.forEach((section) => {
     navObserver.observe(section);
+});
+
+
+//-------------room to view-------------
+
+const roomSections = document.querySelectorAll(".room-reveal");
+
+const roomObserver = new IntersectionObserver((entries) => {
+
+    entries.forEach((entry) => {
+
+        if (entry.isIntersecting) {
+            entry.target.classList.add("room-visible");
+        }
+
+    });
+
+}, {
+    threshold: 0.2
+});
+
+
+roomSections.forEach((room) => {
+    roomObserver.observe(room);
 });
