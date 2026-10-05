@@ -15,6 +15,10 @@ function hideRooms() {
     RoomAEl.style.display="none";
     RoomBEl.style.display="none";
     RoomCEl.style.display="none";
+
+    RoomAEl.classList.remove("room-visible");
+    RoomBEl.classList.remove("room-visible");
+    RoomCEl.classList.remove("room-visible");
 }
 
 
@@ -29,14 +33,18 @@ function backToRooms() {
 function showRoom(room) {
     hideRooms();
 
-    room.style.display = "block";
     Room_messageEL.style.display = "none";
+    room.style.display = "block";
 
-    room.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-    });
+    // Give the browser time to add the room to the page
+    setTimeout(() => {
+        room.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+    }, 50);
 }
+
 
 function bookRoom(roomName) {
     let message = `Hello, I am interested in booking ${roomName} at Radzilani Residence.`;
