@@ -4,17 +4,25 @@
     border-right: 3px solid #61dafb;
     width: 0;
     animation:
-        typing 3s steps(19) forwards,
+        typing 4s steps(19) infinite,
         blink 0.7s step-end infinite;
 }
 
 @keyframes typing {
-    from {
+    0% {
         width: 0;
     }
 
-    to {
+    45% {
         width: 19ch;
+    }
+
+    55% {
+        width: 19ch;
+    }
+
+    100% {
+        width: 0;
     }
 }
 

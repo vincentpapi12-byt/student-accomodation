@@ -54,6 +54,7 @@ const revealObserver = new IntersectionObserver((entries) => {
 
 });
 
+
 revealSections.forEach((section) => {
     revealObserver.observe(section);
 });
