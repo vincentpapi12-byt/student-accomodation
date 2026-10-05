@@ -25,10 +25,23 @@ function backToRooms() {
 }
 
 function showRoom(room) {
-  hideRooms();
-  room.style.display = "block";
-  Room_messageEL.style.display = "none";
-  room.scrollIntoView();
+    hideRooms();
+
+    // Restart the animation
+    room.classList.remove("room-animate");
+    
+    room.style.display = "block";
+    Room_messageEL.style.display = "none";
+
+    // Force the browser to restart the animation
+    void room.offsetWidth;
+
+    room.classList.add("room-animate");
+
+    room.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
 }
 
 
