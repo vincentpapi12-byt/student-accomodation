@@ -1,49 +1,10 @@
 
-let RoomAEl=document.getElementById("room-a");
-let RoomBEl=document.getElementById("room-b");
-let RoomCEl=document.getElementById("room-c");
-let Room_messageEL=document.getElementById("room-message")
-let roomsEl=document.getElementById("rooms")
 const typingHeading = document.querySelector(".typing-heading")
 const navLinks = document.querySelectorAll("nav a");
 
 const sections = document.querySelectorAll(
  "#header-sect, #offer, #about, #rooms, #rules, #contacts"
 );
-
-function hideRooms() {
-    RoomAEl.style.display="none";
-    RoomBEl.style.display="none";
-    RoomCEl.style.display="none";
-
-    RoomAEl.classList.remove("room-visible");
-    RoomBEl.classList.remove("room-visible");
-    RoomCEl.classList.remove("room-visible");
-}
-
-
-function backToRooms() {
-    hideRooms();
-    Room_messageEL.style.display="block"
-    roomsEl.scrollIntoView()
-}
-
-//------------Show Room------------
-
-function showRoom(room) {
-    hideRooms();
-
-    Room_messageEL.style.display = "none";
-    room.style.display = "block";
-
-    // Give the browser time to add the room to the page
-    setTimeout(() => {
-        room.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-        });
-    }, 50);
-}
 
 
 
