@@ -305,17 +305,26 @@ function displayRoomDetails(roomId) {
         </button>
 
         <img
-            src="${room.image}"
-            alt="Illustrative bedroom image for ${room.name}"
-            class="room-detail-image"
+           ${room.image
+    ? `<img
+        src="${room.image}"
+        alt="Bedroom for ${room.name}"
+        class="room-detail-image"
+    >`
+    : `<div class="room-image-placeholder">
+        Photo coming soon
+    </div>`
+}
         >
 
         <h3>${room.name}</h3>
 
         <p>
-            <strong>Price:</strong>
-            R${room.price.toLocaleString("en-ZA")} per month
-        </p>
+    <strong>Price:</strong>
+    ${room.price !== null
+        ? `R${room.price.toLocaleString("en-ZA")} per month`
+        : "Price to be confirmed"}
+</p>
 
         <p>
             <strong>Availability:</strong>
@@ -347,10 +356,19 @@ function displayRoomDetails(roomId) {
             });
         });
 
-    document.getElementById("enquire-room")
-        .addEventListener("click", () => {
-            bookRoom(room.name, room.price);
-        });
+   document.getElementById("enquire-room")
+    .addEventListener("click", () => {
+        const priceText = room.price !== null
+            ? `R${room.price.toLocaleString("en-ZA")} per month`
+            : "price to be confirmed";
+
+        const message = `Hello, I am interested in ${room.name} at Radzilani Residence. The listed price is ${priceText}. Is the room available, and can I arrange a viewing? Thank you.`;
+
+        const whatsappURL =
+            `https://wa.me/27712014121?text=${encodeURIComponent(message)}`;
+
+        window.open(whatsappURL, "_blank");
+    });
 }
 
 roomGallery.addEventListener("click", event => {
