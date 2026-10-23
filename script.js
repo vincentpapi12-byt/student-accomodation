@@ -46,13 +46,15 @@ function showRoom(room) {
 }
 
 
-function bookRoom(roomName) {
-    let message = `Hello, I am interested in booking ${roomName} at Radzilani Residence.`;
+
+function bookRoom(roomName, price) {
+    let message = `Hello, I am interested in ${roomName} at Radzilani Residence, listed at R${price} per month. Is it still available? I would also like to arrange a viewing. Thank you.`;
 
     let whatsappURL = `https://wa.me/27712014121?text=${encodeURIComponent(message)}`;
 
     window.open(whatsappURL, "_blank");
 }
+
 
 const revealSections = document.querySelectorAll(".reveal-section");
 
