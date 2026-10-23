@@ -131,7 +131,11 @@ function displayRooms(filter = "all") {
             >
 
             <div class="room-card-content">
-                <p class="room-status">Availability to be confirmed</p>
+               <p class="room-status">
+                   ${room.status === "confirm"
+                       ? "Availability to be confirmed"
+                       : "Currently unavailable"}
+               </p>
                 <h3>${room.name}</h3>
                 <p class="room-price">
                     R${room.price.toLocaleString("en-ZA")}
