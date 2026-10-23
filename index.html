@@ -64,33 +64,42 @@
     </p>
 </section>
    
-   <section id="rooms" class="room-section reveal-section">
-
-    <div class="line">
-        <span></span>
-        <h3>Rooms To View</h3>
-        <span></span>
+   
+<section id="rooms" class="reveal-section">
+    <div class="rooms-header">
+        <p class="section-label">FIND YOUR SPACE</p>
+        <h2>Explore Our Rooms</h2>
+        <p>
+            Browse the available room options at Radzilani Residence.
+            Contact us to confirm current prices and availability.
+        </p>
     </div>
 
-    <div class="view-card">
-        <img src="Room A.jpg">
-        <p>Room A</p>
-        <button onclick="showRoom(RoomAEl)">View Room</button>
+    <div class="room-filters">
+        <button class="room-filter active-filter" data-filter="all">
+            All Rooms
+        </button>
+        <button class="room-filter" data-filter="available">
+            Available
+        </button>
+        <button class="room-filter" data-filter="unavailable">
+            Unavailable
+        </button>
     </div>
 
-    <div class="view-card">
-        <img src="Room B.jpg">
-        <p>Room B</p>
-        <button onclick="showRoom(RoomBEl)">View Room</button>
+    <div id="room-gallery" class="room-gallery">
+        <!-- JavaScript will generate the room cards here. -->
     </div>
 
-    <div class="view-card">
-        <img src="Room C.jpg">
-        <p>Room C</p>
-        <button onclick="showRoom(RoomCEl)">View Room</button>
-    </div>
+    <p id="room-message" class="room-message">
+        Select a room to view its details.
+    </p>
 
+    <div id="room-details" class="room-details" hidden>
+        <!-- JavaScript will display the selected room here. -->
+    </div>
 </section>
+
 
         <p id="room-message"><strong>Select a room above to view its details.</strong></p>
   
