@@ -871,3 +871,14 @@ footer {
         padding: 0 10px;
     }
 }
+
+.room-image-placeholder {
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #edf3f3;
+    color: #56716f;
+    font-weight: 600;
+    text-align: center;
+}
