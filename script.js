@@ -86,6 +86,7 @@ roomSections.forEach((room) => {
 
 
 
+
 const roomData = [
     {
         id: "room-01",
@@ -93,7 +94,7 @@ const roomData = [
         image: "Room A.jpg",
         price: 3500,
         status: "confirm",
-        facilities: ["Contact us to confirm facilities"]
+        facilities: []
     },
     {
         id: "room-02",
@@ -101,7 +102,7 @@ const roomData = [
         image: "Room B.jpg",
         price: 4000,
         status: "confirm",
-        facilities: ["Contact us to confirm facilities"]
+        facilities: []
     },
     {
         id: "room-03",
@@ -109,9 +110,138 @@ const roomData = [
         image: "Room C.jpg",
         price: 2500,
         status: "confirm",
-        facilities: ["Contact us to confirm facilities"]
+        facilities: []
+    },
+    {
+        id: "room-04",
+        name: "Room 04",
+        image: "",
+        price: null,
+        status: "confirm",
+        facilities: []
+    },
+    {
+        id: "room-05",
+        name: "Room 05",
+        image: "",
+        price: null,
+        status: "confirm",
+        facilities: []
+    },
+    {
+        id: "room-06",
+        name: "Room 06",
+        image: "",
+        price: null,
+        status: "confirm",
+        facilities: []
+    },
+    {
+        id: "room-07",
+        name: "Room 07",
+        image: "",
+        price: null,
+        status: "confirm",
+        facilities: []
+    },
+    {
+        id: "room-08",
+        name: "Room 08",
+        image: "",
+        price: null,
+        status: "confirm",
+        facilities: []
+    },
+    {
+        id: "room-09",
+        name: "Room 09",
+        image: "",
+        price: null,
+        status: "confirm",
+        facilities: []
+    },
+    {
+        id: "room-10",
+        name: "Room 10",
+        image: "",
+        price: null,
+        status: "confirm",
+        facilities: []
+    },
+    {
+        id: "room-11",
+        name: "Room 11",
+        image: "",
+        price: null,
+        status: "confirm",
+        facilities: []
+    },
+    {
+        id: "room-12",
+        name: "Room 12",
+        image: "",
+        price: null,
+        status: "confirm",
+        facilities: []
+    },
+    {
+        id: "room-13",
+        name: "Room 13",
+        image: "",
+        price: null,
+        status: "confirm",
+        facilities: []
+    },
+    {
+        id: "room-14",
+        name: "Room 14",
+        image: "",
+        price: null,
+        status: "confirm",
+        facilities: []
+    },
+    {
+        id: "room-15",
+        name: "Room 15",
+        image: "",
+        price: null,
+        status: "confirm",
+        facilities: []
+    },
+    {
+        id: "room-16",
+        name: "Room 16",
+        image: "",
+        price: null,
+        status: "confirm",
+        facilities: []
+    },
+    {
+        id: "room-17",
+        name: "Room 17",
+        image: "",
+        price: null,
+        status: "confirm",
+        facilities: []
+    },
+    {
+        id: "room-18",
+        name: "Room 18",
+        image: "",
+        price: null,
+        status: "confirm",
+        facilities: []
+    },
+    {
+        id: "room-19",
+        name: "Room 19",
+        image: "",
+        price: null,
+        status: "confirm",
+        facilities: []
     }
 ];
+
 
 const roomGallery = document.getElementById("room-gallery");
 const roomDetails = document.getElementById("room-details");
@@ -124,11 +254,16 @@ function displayRooms(filter = "all") {
 
     roomGallery.innerHTML = filteredRooms.map(room => `
         <article class="room-card">
-            <img
-                src="${room.image}"
-                alt="Illustrative bedroom image for ${room.name}"
-                loading="lazy"
-            >
+           ${room.image
+    ? `<img
+               src="${room.image}"
+               alt="Bedroom for ${room.name}"
+               loading="lazy"
+           >`
+           : `<div class="room-image-placeholder">
+               Photo coming soon
+           </div>`
+       }
 
             <div class="room-card-content">
              <p class="room-status">
@@ -140,9 +275,12 @@ function displayRooms(filter = "all") {
             </p>
                    <h3>${room.name}</h3>
                 <p class="room-price">
-                    R${room.price.toLocaleString("en-ZA")}
-                    <span>/ month</span>
-                </p>
+                  ${room.price !== null
+                      ? `R${room.price.toLocaleString("en-ZA")}
+                         <span>/ month</span>`
+                      : `<span>Price to be confirmed</span>`
+                  }
+              </p>
 
                 <button
                     type="button"
