@@ -92,7 +92,7 @@ const roomData = [
         name: "Room A",
         image: "Room A.jpg",
         price: 3500,
-        status: "unavailable",
+        status: "confirm",
         facilities: ["Contact us to confirm facilities"]
     },
     {
