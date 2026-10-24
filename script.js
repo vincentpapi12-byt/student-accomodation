@@ -304,18 +304,18 @@ function displayRoomDetails(roomId) {
             ← Back to rooms
         </button>
 
-        <img
-           ${room.image
-    ? `<img
-        src="${room.image}"
-        alt="Bedroom for ${room.name}"
-        class="room-detail-image"
-    >`
-    : `<div class="room-image-placeholder">
-        Photo coming soon
-    </div>`
-}
-        >
+        
+        ${room.image
+            ? `<img
+                src="${room.image}"
+                alt="Bedroom for ${room.name}"
+                class="room-detail-image"
+            >`
+            : `<div class="room-image-placeholder">
+                Photo coming soon
+            </div>`
+        }
+
 
         <h3>${room.name}</h3>
 
