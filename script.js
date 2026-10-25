@@ -367,7 +367,13 @@ function displayRoomDetails(roomId) {
             ? `R${room.price.toLocaleString("en-ZA")} per month`
             : "price to be confirmed";
 
-        const message = `Hello, I am interested in ${room.name} at Radzilani Residence. The listed price is ${priceText}. Is the room available, and can I arrange a viewing? Thank you.`;
+       const message = `Hello! I am interested in ${room.name} at Radzilani Residence.
+
+Monthly price: ${priceText}
+
+Could you please confirm whether this room is currently available? I would also like to know more about the room and arrange a viewing if possible.
+
+Thank you!`;
 
         const whatsappURL =
             `https://wa.me/27712014121?text=${encodeURIComponent(message)}`;
