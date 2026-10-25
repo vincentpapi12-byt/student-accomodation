@@ -254,6 +254,7 @@ function displayRooms(filter = "all") {
     : roomData.filter(room => room.status === filter);
   
     roomGallery.innerHTML = filteredRooms.map(room => `
+     
         <article class="room-card">
            ${room.image
     ? `<img
@@ -293,6 +294,9 @@ function displayRooms(filter = "all") {
             </div>
         </article>
     `).join("");
+
+ toggleOtherRooms.style.display =
+    filter === "all" ? "inline-block" : "none";
 }
 
 function displayRoomDetails(roomId) {
