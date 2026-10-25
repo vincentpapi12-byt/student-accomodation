@@ -245,10 +245,12 @@ const roomData = [
 
 const roomGallery = document.getElementById("room-gallery");
 const roomDetails = document.getElementById("room-details");
+const toggleOtherRooms = document.getElementById("toggle-other-rooms");
+let showOtherRooms = false;
 
 function displayRooms(filter = "all") {
-    const filteredRooms = filter === "all"
-    ? roomData.slice(0, 3)
+ const filteredRooms = filter === "all"
+    ? (showOtherRooms ? roomData : roomData.slice(0, 3))
     : roomData.filter(room => room.status === filter);
   
     roomGallery.innerHTML = filteredRooms.map(room => `
@@ -387,6 +389,16 @@ document.querySelectorAll(".room-filter").forEach(button => {
         button.classList.add("active-filter");
         displayRooms(button.dataset.filter);
     });
+});
+
+toggleOtherRooms.addEventListener("click", () => {
+    showOtherRooms = !showOtherRooms;
+
+    toggleOtherRooms.textContent = showOtherRooms
+        ? "Show fewer rooms"
+        : "Explore other rooms";
+
+    displayRooms();
 });
 
 displayRooms();
