@@ -347,6 +347,10 @@ function displayRoomDetails(roomId) {
         block: "start"
     });
 
+    console.log("Details HTML:", roomDetails.innerHTML);
+    console.log("Details hidden:", roomDetails.hidden);
+    console.log("Details display style:", getComputedStyle(roomDetails).display);
+
     document.getElementById("close-room-details")
         .addEventListener("click", () => {
             roomDetails.hidden = true;
