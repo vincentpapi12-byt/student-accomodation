@@ -215,12 +215,12 @@ button:active {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     align-items: stretch;
+    justify-content: center;
     gap: 25px;
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
 }
-
 .rules-card {
     width: 100%;
     min-width: 0;
