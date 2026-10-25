@@ -882,3 +882,10 @@ footer {
     font-weight: 600;
     text-align: center;
 }
+
+
+#room-details:not([hidden]) {
+    display: block !important;
+    visibility: visible;
+    opacity: 1;
+}
