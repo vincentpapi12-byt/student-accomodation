@@ -672,10 +672,6 @@ footer {
     align-items: center;
 }
 
-.rules-cards {
-    flex-direction: column;
-    align-items: center;
-}
 }
 
 .offer-content {
@@ -708,36 +704,6 @@ footer {
     line-height: 1.5;
 }
 
-.rules-card h4 {
-    font-size: 1.4rem;
-    color: rgb(7, 133, 133);
-    margin-bottom: 20px;
-}
-
-.rules-card li i {
-    color: rgb(7, 133, 133);
-    margin-right: 10px;
-}
-
-.rules-card ul {
-    padding: 0 20px;
-    margin: 0;
-}
-
-.rules-card li {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 18px;
-    line-height: 1.5;
-}
-.rules-cards {
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-    gap: 30px;
-    width: 100%;
-}
 
 .contacts-sect .line {
     width: 100%;
