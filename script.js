@@ -247,11 +247,10 @@ const roomGallery = document.getElementById("room-gallery");
 const roomDetails = document.getElementById("room-details");
 
 function displayRooms(filter = "all") {
-    const filteredRooms = roomData.filter(room => {
-        if (filter === "all") return true;
-        return room.status === filter;
-    });
-
+    const filteredRooms = filter === "all"
+    ? roomData.slice(0, 3)
+    : roomData.filter(room => room.status === filter);
+  
     roomGallery.innerHTML = filteredRooms.map(room => `
         <article class="room-card">
            ${room.image
@@ -346,10 +345,6 @@ function displayRoomDetails(roomId) {
         behavior: "smooth",
         block: "start"
     });
-
-    console.log("Details HTML:", roomDetails.innerHTML);
-    console.log("Details hidden:", roomDetails.hidden);
-    console.log("Details display style:", getComputedStyle(roomDetails).display);
 
     document.getElementById("close-room-details")
         .addEventListener("click", () => {
