@@ -1084,3 +1084,31 @@ body {
         box-sizing: border-box;
     }
 }
+
+
+@media (max-width: 700px) {
+    .sidebar {
+        position: relative;
+        padding: 12px 15px;
+        gap: 10px;
+    }
+
+    .sidebar-brand {
+        justify-content: flex-start;
+        gap: 10px;
+    }
+
+    .menu-toggle {
+        display: block;
+        order: -1;
+        align-self: flex-start;
+        margin: 0;
+        padding: 2px 5px;
+        width: 30px;
+        height: 30px;
+        font-size: 1.1rem;
+        line-height: 1;
+        flex-shrink: 0;
+    }
+}
+
