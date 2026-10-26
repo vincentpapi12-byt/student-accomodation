@@ -451,7 +451,7 @@ html {
     gap: 12px;
     width: 100%;
     max-width: 900px;
-    margin: 0 auto 40px;
+    margin: 25px auto 40px;
 }
 
 .room-gallery img {
