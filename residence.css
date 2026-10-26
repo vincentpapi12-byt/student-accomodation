@@ -333,9 +333,6 @@ button:active {
     padding: 12px 22px;
 }
 
-#offer {
-    display: none;
-}
 }
 
 /* =========================
@@ -446,6 +443,15 @@ html {
     gap: 20px;
     flex-wrap: wrap;
     margin: 20px 0 50px;
+}
+
+.extra-room-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto 40px;
 }
 
 .room-gallery img {
@@ -967,4 +973,65 @@ footer {
 
 #header-sect a:hover {
     background-color: rgb(5, 100, 100);
+}
+
+/* Compact layout for additional rooms */
+.room-card.compact-room {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 20px;
+    min-height: 0;
+    height: auto;
+}
+
+.extra-room-gallery .room-card.compact-room {
+    flex: 0 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.room-card.compact-room > img,
+.room-card.compact-room .room-image-placeholder {
+    display: none;
+}
+
+.room-card.compact-room .room-card-content {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 10px 16px;
+    width: 100%;
+    padding: 0;
+}
+.room-card.compact-room .room-status {
+    grid-column: 1;
+    grid-row: 1;
+    margin: 0;
+    justify-self: start;
+}
+
+.room-card.compact-room h3 {
+    grid-column: 1;
+    grid-row: 2;
+    margin: 0;
+    overflow-wrap: anywhere;
+}
+
+.room-card.compact-room .room-price {
+    grid-column: 2;
+    grid-row: 1;
+    margin: 0;
+    font-size: 1rem;
+    text-align: right;
+}
+
+.room-card.compact-room .view-room-btn {
+    grid-column: 2;
+    grid-row: 2;
+    width: auto;
+    max-width: 100%;
+    margin: 0;
+    padding: 10px 14px;
+    white-space: nowrap;
 }

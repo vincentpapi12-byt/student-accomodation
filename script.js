@@ -246,19 +246,23 @@ const roomData = [
 const roomGallery = document.getElementById("room-gallery");
 const roomDetails = document.getElementById("room-details");
 const toggleOtherRooms = document.getElementById("toggle-other-rooms");
+const extraRoomGallery = document.getElementById("extra-room-gallery");
 let showOtherRooms = false;
 
 console.log("Room gallery found:", roomGallery);
 console.log("Room details found:", roomDetails);
-
 function displayRooms(filter = "all") {
- const filteredRooms = filter === "all"
-    ? (showOtherRooms ? roomData : roomData.slice(0, 3))
-    : roomData.filter(room => room.status === filter);
+    const filteredRooms = filter === "all"
+        ? roomData
+        : roomData.filter(room => room.status === filter);
+
+    const featuredRooms = filteredRooms.slice(0, 3);
+    const additionalRooms = filteredRooms.slice(3);
   
-    roomGallery.innerHTML = filteredRooms.map(room => `
+   roomGallery.innerHTML = featuredRooms.map(room => {
      
-        <article class="room-card">
+       return `
+      <article class="room-card">
            ${room.image
     ? `<img
                src="${room.image}"
@@ -296,7 +300,47 @@ function displayRooms(filter = "all") {
                 </button>
             </div>
         </article>
-    `).join("");
+       `;
+}).join("");
+
+extraRoomGallery.innerHTML = (showOtherRooms || filter !== "all")
+    ? additionalRooms.map(room => `
+        <article class="room-card compact-room">
+            ${room.image
+                ? `<img src="${room.image}" alt="Bedroom for ${room.name}" loading="lazy">`
+                : `<div class="room-image-placeholder">Photo coming soon</div>`
+            }
+
+            <div class="room-card-content">
+                <p class="room-status">
+                    ${room.status === "available"
+                        ? "Available"
+                        : room.status === "unavailable"
+                            ? "Currently unavailable"
+                            : "Availability to be confirmed"
+                    }
+                </p>
+
+                <h3>${room.name}</h3>
+
+                <p class="room-price">
+                    ${room.price !== null
+                        ? `R${room.price.toLocaleString("en-ZA")} <span>/ month</span>`
+                        : `<span>Price to be confirmed</span>`
+                    }
+                </p>
+
+                <button
+                    type="button"
+                    class="view-room-btn"
+                    data-room-id="${room.id}"
+                >
+                    View Details
+                </button>
+            </div>
+        </article>
+    `).join("")
+    : "";
 
  toggleOtherRooms.style.display =
     filter === "all" ? "inline-block" : "none";
@@ -386,7 +430,7 @@ Thank you!`;
     });
 }
 
-roomGallery.addEventListener("click", event => {
+function handleRoomClick(event) {
     const button = event.target.closest(".view-room-btn");
 
     if (!button) return;
@@ -394,7 +438,11 @@ roomGallery.addEventListener("click", event => {
     console.log("Clicked room ID:", button.dataset.roomId);
 
     displayRoomDetails(button.dataset.roomId);
-});
+}
+
+roomGallery.addEventListener("click", handleRoomClick);
+extraRoomGallery.addEventListener("click", handleRoomClick);
+
 document.querySelectorAll(".room-filter").forEach(button => {
     button.addEventListener("click", () => {
         document.querySelectorAll(".room-filter").forEach(filterButton => {
