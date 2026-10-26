@@ -1119,25 +1119,29 @@ body {
 }
 
 @media (max-width: 700px) {
-    .menu-toggle {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: fixed;
-        top: 15px;
-        left: 12px;
-        width: 38px;
-        height: 38px;
-        padding: 0;
-        font-size: 20px;
-        line-height: 1;
-        border: none;
-        border-radius: 7px;
-        background: #087f8c;
-        color: white;
-        cursor: pointer;
-        z-index: 1200;
-    }
+
+.menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 15px;
+    left: 12px;
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 19px;
+    line-height: 1;
+    border: 1.5px solid #087f8c;
+    border-radius: 6px;
+    background: rgb(233, 239, 245);
+    color: #087f8c;
+    cursor: pointer;
+    z-index: 1200;
+}
+
 
     .sidebar {
         position: fixed;
