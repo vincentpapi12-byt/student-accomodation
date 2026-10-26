@@ -217,15 +217,16 @@ button:active {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     align-items: stretch;
-    gap: 25px;
+    gap: 20px;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 .rules-card {
     width: 100%;
     min-width: 0;
-    padding: 30px 24px;
+    box-sizing: border-box;
+    padding: 22px 18px;
     background-color: white;
     border: 1px solid #e1eeee;
     border-top: 4px solid rgb(7, 133, 133);
