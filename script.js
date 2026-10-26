@@ -468,27 +468,25 @@ displayRooms();
 
 
 const menuToggle = document.getElementById("menu-toggle");
+const sidebar = document.querySelector(".sidebar");
 const sidebarLinks = document.getElementById("sidebar-links");
 
 menuToggle.addEventListener("click", () => {
-    const isOpen = sidebarLinks.classList.toggle("open");
+    const isOpen = sidebar.classList.toggle("mobile-open");
 
     menuToggle.setAttribute("aria-expanded", isOpen);
     menuToggle.setAttribute(
         "aria-label",
         isOpen ? "Close navigation menu" : "Open navigation menu"
     );
-
     menuToggle.textContent = isOpen ? "✕" : "☰";
 });
 
-// Close the mobile menu after a navigation link is selected
 sidebarLinks.querySelectorAll("a").forEach(link => {
     link.addEventListener("click", () => {
-        sidebarLinks.classList.remove("open");
+        sidebar.classList.remove("mobile-open");
         menuToggle.setAttribute("aria-expanded", "false");
         menuToggle.setAttribute("aria-label", "Open navigation menu");
         menuToggle.textContent = "☰";
     });
 });
-
