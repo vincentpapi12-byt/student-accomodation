@@ -245,17 +245,19 @@ const roomData = [
 
 const roomGallery = document.getElementById("room-gallery");
 const roomDetails = document.getElementById("room-details");
+const toggleOtherRooms = document.getElementById("toggle-other-rooms");
+let showOtherRooms = false;
 
 console.log("Room gallery found:", roomGallery);
 console.log("Room details found:", roomDetails);
 
 function displayRooms(filter = "all") {
-    const filteredRooms = roomData.filter(room => {
-        if (filter === "all") return true;
-        return room.status === filter;
-    });
-
+ const filteredRooms = filter === "all"
+    ? (showOtherRooms ? roomData : roomData.slice(0, 3))
+    : roomData.filter(room => room.status === filter);
+  
     roomGallery.innerHTML = filteredRooms.map(room => `
+     
         <article class="room-card">
            ${room.image
     ? `<img
@@ -295,6 +297,9 @@ function displayRooms(filter = "all") {
             </div>
         </article>
     `).join("");
+
+ toggleOtherRooms.style.display =
+    filter === "all" ? "inline-block" : "none";
 }
 
 function displayRoomDetails(roomId) {
@@ -366,7 +371,13 @@ function displayRoomDetails(roomId) {
             ? `R${room.price.toLocaleString("en-ZA")} per month`
             : "price to be confirmed";
 
-        const message = `Hello, I am interested in ${room.name} at Radzilani Residence. The listed price is ${priceText}. Is the room available, and can I arrange a viewing? Thank you.`;
+       const message = `Hello! I am interested in ${room.name} at Radzilani Residence.
+
+Monthly price: ${priceText}
+
+Could you please confirm whether this room is currently available? I would also like to know more about the room and arrange a viewing if possible.
+
+Thank you!`;
 
         const whatsappURL =
             `https://wa.me/27712014121?text=${encodeURIComponent(message)}`;
@@ -393,6 +404,16 @@ document.querySelectorAll(".room-filter").forEach(button => {
         button.classList.add("active-filter");
         displayRooms(button.dataset.filter);
     });
+});
+
+toggleOtherRooms.addEventListener("click", () => {
+    showOtherRooms = !showOtherRooms;
+
+    toggleOtherRooms.textContent = showOtherRooms
+        ? "Show fewer rooms"
+        : "Explore other rooms";
+
+    displayRooms();
 });
 
 displayRooms();
