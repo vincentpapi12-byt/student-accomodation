@@ -332,6 +332,10 @@ button:active {
 #header-sect a {
     padding: 12px 22px;
 }
+
+#offer {
+    display: none;
+}
 }
 
 /* =========================
