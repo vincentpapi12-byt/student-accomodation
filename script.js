@@ -246,6 +246,9 @@ const roomData = [
 const roomGallery = document.getElementById("room-gallery");
 const roomDetails = document.getElementById("room-details");
 
+console.log("Room gallery found:", roomGallery);
+console.log("Room details found:", roomDetails);
+
 function displayRooms(filter = "all") {
     const filteredRooms = roomData.filter(room => {
         if (filter === "all") return true;
@@ -296,9 +299,10 @@ function displayRooms(filter = "all") {
 
 function displayRoomDetails(roomId) {
     const room = roomData.find(item => item.id === roomId);
-
+            console.log("Room found:", room);
     if (!room) return;
-
+          console.log("About to display room details");
+          
     roomDetails.innerHTML = `
         <button type="button" id="close-room-details">
             ← Back to rooms
@@ -376,9 +380,10 @@ roomGallery.addEventListener("click", event => {
 
     if (!button) return;
 
+    console.log("Clicked room ID:", button.dataset.roomId);
+
     displayRoomDetails(button.dataset.roomId);
 });
-
 document.querySelectorAll(".room-filter").forEach(button => {
     button.addEventListener("click", () => {
         document.querySelectorAll(".room-filter").forEach(filterButton => {
